@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from './Components/Header';
+import Main from './Components/Main';
+import Footer from './Components/Footer';
+import './css/style.css'
+import Context from './Components/Context'
+import  {  BrowserRouter } from 'react-router-dom'
 
 function App() {
+
+   const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || [])
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter >
+
+    <Context.Provider value = {{cart, setCart}}>
+      <div className="App">
+          <Header />
+          <Main />
+          <Footer />
+      </div>
+      </Context.Provider>
+      </BrowserRouter>
   );
 }
 
