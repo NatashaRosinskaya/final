@@ -1,0 +1,233 @@
+@media (max-width:1152px){
+    .promo__nav a{
+        font-size: 12px;
+    }
+    .catalog__block{
+        height: 1200px;
+    }
+}
+
+@media (max-width:1024px){
+    .nav_toggle{
+        display: inline-block;
+    }
+    .promo__nav ul{
+        display: none;
+    }
+    #nav_toggle:checked ~ ul{
+        display: flex;
+        flex-direction: column;
+    }
+    .promo__nav ul{
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 5%;
+        min-width: 200px;
+        height: 100%;
+        background-color: #222222;
+        opacity: 0.7;
+    }
+    .promo__nav li{
+        padding-right: 0px; 
+        margin-bottom: 10px;
+    }
+    .promo__brands img{
+        width: 150px;
+    }
+    .articles__prev img{
+        width: 300px;
+    }
+    .footer{
+        height: 230px;
+    }
+    .cart .catalog__caption__name{
+        font-size: 16px;
+    }
+}
+@media (max-width:800px){
+    .promo__brands img{
+        width: 120px;
+    }
+    .catalog__prevs img{
+        width: 250px;
+        height: 270px;
+    }
+    .articles{
+        height: 650px;
+    }
+    .articles__prev img{
+        width: 220px;
+        height: 280px;
+    }
+    .articles__prev{
+        margin: 0 10px;
+    }
+    .articles__prev__title{
+        font-size: 14px;
+    }
+    .articles__title{
+        margin-bottom: 15px;
+    }
+    .footer{
+        height: 700px;
+    }
+    .footer__blocks{
+        flex-direction: column;
+    }
+}
+@media (max-width:768px){
+    .promo__brands img{
+        width: 100px;
+    }
+    .catalog__btn{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .back__btn button{
+        font-size: 14px;
+    }
+}
+@media (max-width:425px){
+    .promo__logo img{
+        width: 150px;
+    }
+    .promo__information{
+        height: 800px;
+    }
+    .promo__brands {
+        flex-direction: column;
+    }
+    .promo__brands img:not(:last-child){
+        border-right: 0;
+        padding: 0;
+    }
+    .promo__brands img{
+        width: 100px;
+    }
+    .promo__title,
+    .address__title,
+    .articles__title,
+    .feedback__title{
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+    .promo__content{
+        height: 600px;
+    }
+    .catalog__block {
+        height: 2300px;
+    }
+    .catalog__btns{
+        flex-direction: column;
+        align-items: center;
+    }
+    .catalog__btn:not(:last-child){
+        margin-right: 0;
+    }
+    .catalog__prev{
+        margin: 0;
+    }
+    .catalog__title{
+        font-size: 24px;
+        line-height: 20px;
+    }
+    .articles{
+        height: 1200px;
+    }
+    .articles__prevs{
+        flex-direction: column;
+    }
+    .article__btn{
+        font-size: 14px;
+        line-height: 16px;
+        margin-bottom: 10px;
+    }
+    .feedback__forms{
+        flex-direction: column;
+    }
+    .feedback__forms ul{
+        margin-bottom: 10px;
+    }
+    .forms input,
+    .forms textarea,
+    .form__vacancy input{
+        width: 300px;
+    }
+    .feedback__btn{
+        font-size: 14px;
+    }
+    .footer{
+        height: 750px;
+    }
+    .information_for_nav p,
+    .information_for_nav ul{
+    line-height: 20px;
+    }
+.information_for_nav h2, 
+.information_for_nav h3{
+    font-size: 22px;
+    line-height: 26px;
+    margin-top: 10px;
+    }
+.information_for_nav h3{
+    font-size: 22px;
+    }
+.feedback__btn__vacancy{
+    font-size: 14px;
+    width: 150px;
+}
+.list__title ul li{
+    overflow: hidden;
+}
+.list__title li{
+    font-size: 14px;
+}
+.cart .catalog__caption__name{
+    font-size: 14px;
+}
+.cart__delete button{
+    width: 80px;
+}
+.back__btn{
+    flex-direction: column;
+    align-items: center;
+}
+.productcart__total{
+    flex-direction: column;
+}
+}
+
+@media (max-width:375px){
+    .address__btn{
+        margin-top: 20px;
+    }
+    .cart li{
+        font-size: 14px;
+        padding-bottom: 10px;
+    }
+    .catalog__caption__name{
+        font-size: 22px;
+    }
+}
+@media (max-width:375px){
+    .feedback__description{
+        font-size: 18px;
+    }
+    .feedback__title{
+        font-size: 22px;
+    }
+    .forms input,
+    .forms textarea,
+    .form__vacancy input{
+        width: 250px;
+    }
+    .footer{
+        height: 800px;
+    }
+    .productcart__total img{
+        width: 250px;
+        height: 250px;
+    }
+}

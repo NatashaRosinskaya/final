@@ -4,7 +4,7 @@ import Product from "./Product";
 import Context from "./Context";
 
 function Catalog(){
-    <Navigation />
+    
     const ul = useRef()
 
     const [products, setProducts] = useState(JSON.parse(localStorage.getItem('products')) || [])
@@ -13,9 +13,11 @@ function Catalog(){
 
     useEffect(()=>{
         if(!localStorage.getItem('products')){
-        fetch('https://fakestoreapi.com/products/')
+            const url = 'data/data.json'
+        fetch('data/data.json')
             .then(res=>res.json())
             .then(json=>{
+                console.log(json)
                 localStorage.setItem('products', JSON.stringify(json))
                 setProducts(json)
 
@@ -24,17 +26,7 @@ function Catalog(){
     }},[])
     
 
-    useEffect(()=>{
-        if(!localStorage.getItem('products')){
-        fetch('../data/data.json')
-            .then(res=>res.json())
-            .then(json=>{
-                localStorage.setItem('products', JSON.stringify(json))
-                setProducts(json)
-
-            })
-
-    }},[])
+   
 
     function checkAddToCart (product){
         const productStatus = cart.findIndex((item)=>item.id === product.id)
@@ -57,74 +49,27 @@ function Catalog(){
 
         return (
             <>
-             <div className='catalog'>
+            <Navigation />
+                
+                            
+             <div className='catalog__nav'>
+                 <div className="container">
                      <ul ref = {ul} className='catalog__items'>
-                     <Product                          
-                         addToCart={addToCart}
-                         
-                     />
+                         {products.map((product)=>{
+                             return(
+                                <Product                          
+                                addToCart={addToCart}
+                                product={product} 
+                            />
+                             )
+                         })}
+                    
                      </ul>
+             </div>
              </div>
              </>
     )
 }
 export default Catalog
 
-{/** <div className="catalog">
-            <ul className='catalog__items'>
-                <li className='catalog__item'>
-                    <div className='catalog__item__img'><img src="https://via.placeholder.com/220"/></div>
-                    <div className='catalog__caption'>
-                    <div className="catalog__caption__name">Подвеска</div>
-                    <div className='catalog__caption__subname'>Dolce & Gabanne</div>
-                    <div className='catalog__caption__price'>175 000 ₽</div>
-                    <button className='catalog__caption__btn'>Добавить в корзину</button>
-                </div>
-                </li>
-                <li className='catalog__item'>
-                    <div className='catalog__item__img'><img src="https://via.placeholder.com/220"/></div>
-                    <div className='catalog__caption'>
-                    <div className="catalog__caption__name">Подвеска</div>
-                    <div className='catalog__caption__subname'>Dolce & Gabanne</div>
-                    <div className='catalog__caption__price'>175 000 ₽</div>
-                    <button className='catalog__caption__btn'>Добавить в корзину</button>
-                </div>
-                </li>
-                <li className='catalog__item'>
-                    <div className='catalog__item__img'><img src="https://via.placeholder.com/220"/></div>
-                    <div className='catalog__caption'>
-                    <div className="catalog__caption__name">Подвеска</div>
-                    <div className='catalog__caption__subname'>Dolce & Gabanne</div>
-                    <div className='catalog__caption__price'>175 000 ₽</div>
-                    <button className='catalog__caption__btn'>Добавить в корзину</button>
-                </div>
-                </li>
-                <li className='catalog__item'>
-                    <div className='catalog__item__img'><img src="https://via.placeholder.com/220"/></div>
-                    <div className='catalog__caption'>
-                    <div className="catalog__caption__name">Подвеска</div>
-                    <div className='catalog__caption__subname'>Dolce & Gabanne</div>
-                    <div className='catalog__caption__price'>175 000 ₽</div>
-                    <button className='catalog__caption__btn'>Добавить в корзину</button>
-                </div>
-                </li>
-                <li className='catalog__item'>
-                    <div className='catalog__item__img'><img src="https://via.placeholder.com/220"/></div>
-                    <div className='catalog__caption'>
-                    <div className="catalog__caption__name">Подвеска</div>
-                    <div className='catalog__caption__subname'>Dolce & Gabanne</div>
-                    <div className='catalog__caption__price'>175 000 ₽</div>
-                    <button className='catalog__caption__btn'>Добавить в корзину</button>
-                </div>
-                </li>
-                <li className='catalog__item'>
-                    <div className='catalog__item__img'><img src="https://via.placeholder.com/220"/></div>
-                    <div className='catalog__caption'>
-                    <div className="catalog__caption__name">Подвеска</div>
-                    <div className='catalog__caption__subname'>Dolce & Gabanne</div>
-                    <div className='catalog__caption__price'>175 000 ₽</div>
-                    <button className='catalog__caption__btn'>Добавить в корзину</button>
-                </div>
-                </li>
-            </ul>
-        </div>**/}
+ 
